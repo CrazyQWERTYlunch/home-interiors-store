@@ -10,5 +10,6 @@ def index(request): #  в request Попадают данные о запрос�
     }
     return render(request, 'main/index.html', context=context)
 
+
 def about(request) -> HttpResponse: #  в request Попадают данные о запросе и пользователе
     return HttpResponse('About us')
