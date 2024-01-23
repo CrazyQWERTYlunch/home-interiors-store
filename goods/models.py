@@ -1,9 +1,8 @@
 from enum import unique
 from pyexpat import model
-from re import S
-from tabnanny import verbose
 from django.conf.global_settings import MIGRATION_MODULES
 from django.db import models
+from django.urls import reverse
 
 
 class Categories(models.Model):
@@ -37,8 +36,13 @@ class Products(models.Model):
         return f'{self.name} Количество - {self.quantity}'
     
 
+    def get_absolute_url(self):
+        return reverse("catalog:product", kwargs={"product_slug": self.slug})
+    
+    
     def display_id(self):
         return f'{self.id:05}'
+    
 
     def sell_price(self):
         if self.discount:
