@@ -1,7 +1,4 @@
 from django.shortcuts import render
-from django.shortcuts import HttpResponse
-
-from goods.models import Categories
 
 # Create your views here.
 def index(request): #  в request Попадают данные о запросе и пользователе

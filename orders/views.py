@@ -5,7 +5,6 @@ from django.forms import ValidationError
 from django.shortcuts import redirect, render
 
 from carts.models import Cart
-
 from orders.forms import CreateOrderForm
 from orders.models import Order, OrderItem
 
